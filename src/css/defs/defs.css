@@ -1,0 +1,112 @@
+:root {
+	/* Макет
+	Глобальный корректор значений */
+	--c: 1;
+	/* Ограничение ширины страницы */
+	--page-width: unset;
+	/* Отступ контента */
+	--content-indents: calc(48px * var(--c));
+	/* Количество колонок */
+	--grid-columns: 12;
+	/* Отступы контента от края экрана */
+	--grid-sides: calc(32px * var(--c));
+	/* Отступы между колонками и по бокам секций */
+	--grid-gutter: calc(16px * var(--c));
+	/* Подсчет размера колонок */
+	--grid-column-width: calc(
+		(100vw - var(--grid-gutter) * var(--grid-columns)) / var(--grid-columns)
+	);
+	/* Отступы сверху/снизу секций */
+	--section-padding: var(--grid-gutter);
+	/* Отступы между секций */
+	--section-gap: calc(var(--grid-gutter) * 4);
+	/* Ограничение ширины контента */
+	--content-width: calc(
+		100% + var(--grid-gutter) -
+			((var(--grid-gutter) + var(--grid-column-width)) * 4)
+	); /* Ширина контента -2 колонки
+	--content-width: unset; Нефиксированный размер контента */
+}
+/* Адаптивность */
+@custom-media --lg (max-width: 1200px);
+@custom-media --md (max-width: 852px);
+@custom-media --sm (max-width: 520px);
+
+:root {
+	@media (--lg) {
+		--grid-columns: 8;
+		--content-width: calc(
+			100% + var(--grid-gutter) -
+				((var(--grid-gutter) + var(--grid-column-width)) * 2)
+		);
+	}
+	@media (--md) {
+		--grid-columns: 6;
+		--c: 0.85;
+		--content-width: 100%;
+	}
+	@media (--sm) {
+		--c: 0.7;
+		--grid-columns: 4;
+	}
+}
+
+/* Глобальные стили */
+
+/* Убрать дёрганье от скроллбара */
+/* html {
+overflow-x: hidden;
+margin-right: calc(-1 * (100vw - 100%));
+} */
+html {
+	font-size: 16px;
+}
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+	color: var(--c-main-1) var(--c-bg);
+	font-family: Montserrat, sans-serif;
+	position: relative;
+	overflow-x: hidden;
+	align-items: center;
+	justify-content: space-between;
+	font-size: 1rem;
+	@media (max-width: 1280px) {
+		font-size: 0.9rem;
+	}
+	@media (max-width: 760px) {
+		font-size: 0.82rem;
+	}
+
+	.main-header,
+	.main-wrapper,
+	.main-footer {
+		padding: var(--section-padding) var(--grid-sides);
+		width: 100%;
+		max-width: var(--page-width);
+		margin: * auto;
+		display: flex;
+		justify-content: center;
+		align-content: center;
+		align-items: center;
+	}
+	.main-wrapper {
+		padding-top: calc(var(--section-padding) * 3);
+		padding-bottom: calc(var(--section-padding) * 2);
+		max-width: var(--content-width);
+		flex: 1 1 auto;
+		align-content: flex-start;
+		line-height: 1.5;
+		flex-direction: column;
+		> main {
+			flex: 1;
+		}
+	}
+
+	&.not-webp {
+		picture > source[type*='webp'] {
+			display: none;
+		}
+	}
+}

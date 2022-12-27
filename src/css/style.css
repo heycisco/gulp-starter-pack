@@ -1,0 +1,12 @@
+@import 'defs/fonts';
+@import 'defs/nullstyle';
+@import 'schemes/heycisco-main';
+@import 'defs/defs';
+
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+.hidden {
+	display: none;
+}
