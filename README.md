@@ -20,6 +20,8 @@
 - `npm run icons` — создание иконочного шрифта.
 
 ### Установка
+	git clone https://github.com/heycisco/gulp-starter-pack
+	cd gulp-starter-pack
 	npm install --global gulp-cli
 	npm install
 Отредактировать **gulp/config/ftp.js** для использования загрузки на FTP.

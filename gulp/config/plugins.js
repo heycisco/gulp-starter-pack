@@ -4,7 +4,7 @@ import notify from 'gulp-notify';
 import browsersync from 'browser-sync';
 import newer from 'gulp-newer';
 import ifPlugin from 'gulp-if';
-import { default as sourcemaps } from 'gulp-sourcemaps';
+import sourcemaps from 'gulp-sourcemaps';
 
 export const plugins = {
 	replace: replace,

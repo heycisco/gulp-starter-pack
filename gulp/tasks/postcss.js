@@ -55,7 +55,6 @@ const postCssOptionsBuild = [
 		preset: [
 			'advanced',
 			{
-				normalizeWhitespace: true,
 				cssDeclarationSorter: { order: 'smacss' },
 				discardComments: { removeAll: true },
 				normalizeWhitespace: false,

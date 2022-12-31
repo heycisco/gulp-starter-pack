@@ -8,8 +8,8 @@ export const js = () => {
 				app.plugins.notify.onError({
 					title: 'JS',
 					message: 'Error: <%= error.message %>',
-				})
-			)
+				}),
+			),
 		)
 		.pipe(app.plugins.if(app.isDev, app.plugins.sourcemaps.init()))
 		.pipe(
@@ -30,7 +30,7 @@ export const js = () => {
 						},
 					],
 				},
-			})
+			}),
 		)
 		.pipe(app.plugins.if(app.isDev, app.plugins.sourcemaps.write()))
 		.pipe(app.gulp.dest(app.path.build.js))

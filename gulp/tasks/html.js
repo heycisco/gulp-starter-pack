@@ -15,18 +15,14 @@ export const html = (done) => {
 			),
 		)
 		.pipe(fileInclude())
-
-		/* .pipe(
-				pug({
-				// Cжатие HTML файла
-				pretty: true,
-				// Показывать в терминале какой файл обработан
-					verbose: true,
-				})
-			) */
-
+		// .pipe(
+		// 	pug({
+		// 		pretty: true,
+		// 		verbose: true,
+		// 	}),
+		// )
 		.pipe(app.plugins.replace(/\$img\//g, 'img/'))
-		// .pipe(webpHtmlNosvg())
+		.pipe(webpHtmlNosvg())
 		.pipe(
 			app.plugins.if(
 				app.isBuild,

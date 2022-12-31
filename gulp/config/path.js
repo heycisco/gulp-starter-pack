@@ -1,7 +1,7 @@
 import * as nodePath from 'path';
 const rootFolder = nodePath.basename(nodePath.resolve());
-
 const buildFolder = `./dist`;
+// const buildFolder = process.env.npm_package_name;
 const cleanFolder = [`./dist/{css,js,img}`, `./dist/*.*`];
 const srcFolder = `./src`;
 
