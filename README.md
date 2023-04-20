@@ -28,6 +28,6 @@
 
 ---
 
-### [Подробное описание](https://starchenkov.pro/notes/gulp-pack/ "Читать у меня на сайте")
+### [Подробное описание](https://starchenkov.pro/create/gulp-pack/ "Читать у меня на сайте")
 
 [Мой Telegram](https://telegram.me/starchenkov "Если что-то пошло не так")
